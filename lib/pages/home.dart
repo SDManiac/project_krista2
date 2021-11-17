@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:project_krista2/models/beer.dart';
+import 'package:project_krista2/widgets/bottom_bar.dart';
+import 'package:project_krista2/widgets/catalog.dart';
+import 'package:project_krista2/widgets/item_card.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final beerData = Provider.of<BeerDataProvider>(context);
+
     return Scaffold(
-      backgroundColor: Colors.amberAccent,
+      backgroundColor: Colors.amberAccent[700],
       body: SafeArea(
         child: Container(
             height: MediaQuery.of(context).size.height - 85,
@@ -34,18 +41,26 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  child: Text('Горизонтальный список карточек'),
+                  padding: const EdgeInsets.all(5.0),
+                  height: 290,
+                  child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: beerData.items.length,
+                      itemBuilder: (context, int index) =>
+                          ChangeNotifierProvider.value(
+                              value: beerData.items[index], child: ItemCard())),
                 ),
                 const Padding(
                   padding: EdgeInsets.all(10.0),
                   child: Text('Пивной каталог'),
                 ),
-                Container(
-                  child: Text('Список каталогов'),
-                ),
+                ...beerData.items.map((value) {
+                  return CatalogListTile(imgURL: value.imgURL);
+                }).toList(),
               ],
             )),
       ),
+      bottomNavigationBar: BottomBar(),
     );
   }
 }
