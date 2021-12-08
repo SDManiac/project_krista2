@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project_krista2/main.dart';
 import 'package:project_krista2/models/cart.dart';
+import 'package:project_krista2/pages/item_p.dart';
 import 'package:provider/provider.dart';
 
 class CartItem extends StatelessWidget {
@@ -15,7 +16,9 @@ class CartItem extends StatelessWidget {
       child: ListTile(
         leading: InkWell(
           onTap: () {
-            // !- Навигация на страницу пива
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) =>
+                    ItemPage(beerId: cartData.cartItems.keys.toList()[index])));
           },
           child: Container(
             width: 50,

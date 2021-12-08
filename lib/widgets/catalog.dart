@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_krista2/pages/catalog_p.dart';
 
 class CatalogListTile extends StatelessWidget {
   final imgURL;
@@ -9,10 +10,14 @@ class CatalogListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        // !- Переход на страницу каталога
+        Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => BeerCatalog(imgURL: imgURL)));
       },
       child: Container(
+        decoration: BoxDecoration(
+            color: Colors.white, borderRadius: BorderRadius.circular(15)),
         padding: const EdgeInsets.all(10.0),
+        margin: EdgeInsets.only(top: 20),
         child: ListTile(
           leading: Container(
             width: 60,
@@ -29,17 +34,17 @@ class CatalogListTile extends StatelessWidget {
           subtitle: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text('09:00 – 00:00'),
+              Text('За что ценители голосуют рублем'),
               Row(
                 children: <Widget>[
                   Icon(
                     Icons.star,
                     size: 15,
-                    color: Colors.amberAccent[700],
+                    color: Colors.amberAccent,
                   ),
-                  Text('4.9')
+                  Text('5.0')
                 ],
-              )
+              ),
             ],
           ),
         ),

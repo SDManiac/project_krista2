@@ -19,10 +19,10 @@ class HomePage extends StatelessWidget {
             height: MediaQuery.of(context).size.height - 85,
             decoration: const BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(35),
-                  bottomRight: Radius.circular(35),
-                )),
+                image: DecorationImage(
+                    image: NetworkImage(
+                        'https://sun9-81.userapi.com/impg/mhyQuFYcnk5F00F2B_p3715M-Z2rQ7Gil8u_Pw/KZa99flGaFU.jpg?size=2560x1707&quality=95&sign=78f330fbbd86519c828a8b8b11f56cb1&type=album'),
+                    fit: BoxFit.cover)),
             child: ListView(
               padding: const EdgeInsets.all(10.0),
               children: <Widget>[
@@ -30,14 +30,20 @@ class HomePage extends StatelessWidget {
                   child: const ListTile(
                     title: Text(
                       'Крафтовое пиво',
-                      style:
-                          TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
                     ),
                     subtitle: Text(
-                      'Наиболее популярные сорта на любой вкус',
-                      style: TextStyle(fontSize: 16),
+                      'Популярные сорта на любой вкус',
+                      style: TextStyle(fontSize: 16, color: Colors.white),
                     ),
-                    trailing: Icon(Icons.panorama_horizontal),
+                    // -! Надо подумать
+                    trailing: Icon(
+                      Icons.account_circle,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
                 Container(
@@ -50,9 +56,16 @@ class HomePage extends StatelessWidget {
                           ChangeNotifierProvider.value(
                               value: beerData.items[index], child: ItemCard())),
                 ),
-                const Padding(
+                Container(
                   padding: EdgeInsets.all(10.0),
-                  child: Text('Пивной каталог'),
+                  margin: EdgeInsets.only(right: 225),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
+                      color: Colors.amberAccent[700]),
+                  child: Text(
+                    'Пивные подборки',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
                 ),
                 ...beerData.items.map((value) {
                   return CatalogListTile(imgURL: value.imgURL);

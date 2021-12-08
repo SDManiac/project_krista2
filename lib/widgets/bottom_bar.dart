@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project_krista2/models/cart.dart';
 import 'package:project_krista2/pages/cart_p.dart';
+import 'package:project_krista2/pages/item_p.dart';
 import 'package:provider/provider.dart';
 
 class BottomBar extends StatelessWidget {
@@ -31,7 +32,9 @@ class BottomBar extends StatelessWidget {
                       tag: cartItems.values.toList()[index].imgURL,
                       child: GestureDetector(
                         onTap: () {
-                          // !- Переход на страницу товара
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => ItemPage(
+                                  beerId: cartItems.keys.toList()[index])));
                         },
                         // Контейнер с кол-вом товара
                         child: Stack(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project_krista2/models/beer.dart';
 import 'package:project_krista2/models/cart.dart';
+import 'package:project_krista2/pages/item_p.dart';
 import 'package:provider/provider.dart';
 
 class ItemCard extends StatelessWidget {
@@ -24,7 +25,10 @@ class ItemCard extends StatelessWidget {
         children: <Widget>[
           GestureDetector(
             onTap: () {
-              // Переход на страницу с подробностями
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => ItemPage(
+                        beerId: beer.id,
+                      )));
             },
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
