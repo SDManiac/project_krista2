@@ -15,7 +15,8 @@ class CatalogListTile extends StatelessWidget {
       },
       child: Container(
         decoration: BoxDecoration(
-            color: Colors.white, borderRadius: BorderRadius.circular(15)),
+            color: Color(0xFFFFFFFF).withOpacity(0.9),
+            borderRadius: BorderRadius.circular(15)),
         padding: const EdgeInsets.all(10.0),
         margin: EdgeInsets.only(top: 20),
         child: ListTile(

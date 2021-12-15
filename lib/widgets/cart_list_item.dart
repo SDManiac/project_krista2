@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 class CartItemList extends StatelessWidget {
   final cartData;
 
-  CartItemList({Key key, this.cartData}) : super(key: key);
+  const CartItemList({Key key, this.cartData}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class CartItemList extends StatelessWidget {
           return Dismissible(
             key: ValueKey(cartData.cartItems.keys.toList()[index]),
             background: Container(
-              child: Icon(
+              child: const Icon(
                 Icons.delete,
                 color: Colors.redAccent,
                 size: 30.0,

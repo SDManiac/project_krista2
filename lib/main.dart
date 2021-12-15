@@ -4,8 +4,12 @@ import 'package:project_krista2/models/beer.dart';
 import 'package:project_krista2/pages/home.dart';
 import 'package:provider/provider.dart';
 import 'models/cart.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
   runApp(const MyApp());
 }
 
@@ -30,7 +34,7 @@ class MyApp extends StatelessWidget {
             textTheme: GoogleFonts.marmeladTextTheme(
               Theme.of(context).textTheme,
             )),
-        home: HomePage(),
+        home: const HomePage(),
       ),
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_krista2/models/beer.dart';
+import 'package:project_krista2/pages/user_p.dart';
 import 'package:project_krista2/widgets/bottom_bar.dart';
 import 'package:project_krista2/widgets/catalog.dart';
 import 'package:project_krista2/widgets/item_card.dart';
@@ -27,21 +28,27 @@ class HomePage extends StatelessWidget {
               padding: const EdgeInsets.all(10.0),
               children: <Widget>[
                 Container(
-                  child: const ListTile(
-                    title: Text(
+                  child: ListTile(
+                    title: const Text(
                       'Крафтовое пиво',
                       style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
                           color: Colors.white),
                     ),
-                    subtitle: Text(
+                    subtitle: const Text(
                       'Популярные сорта на любой вкус',
                       style: TextStyle(fontSize: 16, color: Colors.white),
                     ),
                     // -! Надо подумать
-                    trailing: Icon(
-                      Icons.account_circle,
+                    trailing: IconButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => UserPage()));
+                      },
+                      icon: const Icon(Icons.account_circle),
                       color: Colors.white,
                     ),
                   ),
@@ -57,14 +64,15 @@ class HomePage extends StatelessWidget {
                               value: beerData.items[index], child: ItemCard())),
                 ),
                 Container(
-                  padding: EdgeInsets.all(10.0),
-                  margin: EdgeInsets.only(right: 225),
+                  padding: const EdgeInsets.all(10.0),
+                  margin: const EdgeInsets.only(right: 225),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(25),
-                      color: Colors.amberAccent[700]),
-                  child: Text(
+                      color: Color(0xFFFFAB00).withOpacity(0.9)),
+                  child: const Text(
                     'Пивные подборки',
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold, color: Colors.white),
                   ),
                 ),
                 ...beerData.items.map((value) {
@@ -73,7 +81,7 @@ class HomePage extends StatelessWidget {
               ],
             )),
       ),
-      bottomNavigationBar: BottomBar(),
+      bottomNavigationBar: const BottomBar(),
     );
   }
 }

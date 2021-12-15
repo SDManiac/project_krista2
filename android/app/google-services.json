@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "343235663746",
+    "project_id": "project-krista2",
+    "storage_bucket": "project-krista2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:343235663746:android:37f462702801156411219b",
+        "android_client_info": {
+          "package_name": "com.example.project_krista2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "343235663746-vdl6or9qho02tbvjdtctbna10jirmf5l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2KfXqWp2x6RJERa4rddZPDl80i3_Nsyw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "343235663746-vdl6or9qho02tbvjdtctbna10jirmf5l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -4,7 +4,7 @@ import 'package:project_krista2/widgets/cart_list_item.dart';
 import 'package:provider/provider.dart';
 
 class CartPage extends StatelessWidget {
-  CartPage({Key key}) : super(key: key);
+  const CartPage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -17,7 +17,7 @@ class ItemCard extends StatelessWidget {
       margin: const EdgeInsets.all(5.0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15.0),
-        color: Color(int.parse(beer.color)),
+        color: Color(int.parse(beer.color)).withOpacity(0.83),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

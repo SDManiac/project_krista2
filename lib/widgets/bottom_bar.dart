@@ -46,7 +46,7 @@ class BottomBar extends StatelessWidget {
                               margin: const EdgeInsets.all(5.0),
                               decoration: BoxDecoration(
                                   shape: BoxShape.circle,
-                                  boxShadow: [
+                                  boxShadow: const [
                                     BoxShadow(
                                         color: Colors.black54,
                                         blurRadius: 3.0,
@@ -65,17 +65,17 @@ class BottomBar extends StatelessWidget {
                                 right: 2,
                                 bottom: 5,
                                 child: Container(
-                                  padding: EdgeInsets.all(2.0),
+                                  padding: const EdgeInsets.all(2.0),
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10.0),
                                     color: Colors.black,
                                   ),
-                                  constraints: BoxConstraints(
+                                  constraints: const BoxConstraints(
                                       minWidth: 16, maxHeight: 16),
                                   child: Text(
                                     '(${cartItems.values.toList()[index].quantity}',
                                     textAlign: TextAlign.center,
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       fontSize: 11,
                                       color: Colors.white,
                                     ),

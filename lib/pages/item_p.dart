@@ -8,7 +8,7 @@ import 'package:provider/provider.dart';
 class ItemPage extends StatelessWidget {
   final String beerId;
 
-  ItemPage({Key key, this.beerId}) : super(key: key);
+  const ItemPage({Key key, this.beerId}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -52,10 +52,10 @@ class ItemPage extends StatelessWidget {
                       data.title,
                       style: TextStyle(fontSize: 26.0),
                     ),
-                    Divider(),
+                    const Divider(),
                     Row(
                       children: <Widget>[
-                        Text(
+                        const Text(
                           'Цена: ',
                           style: TextStyle(fontSize: 24.0),
                         ),
@@ -65,10 +65,10 @@ class ItemPage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Divider(),
+                    const Divider(),
                     Text(data.description),
 
-                    SizedBox(
+                    const SizedBox(
                       height: 20.0,
                     ),
 
@@ -79,14 +79,14 @@ class ItemPage extends StatelessWidget {
                         ? Column(
                             children: <Widget>[
                               MaterialButton(
-                                  color: Color(0xFFCCFF90),
-                                  child: Text('Перейти в корзину'),
+                                  color: const Color(0xFFCCFF90),
+                                  child: const Text('Перейти в корзину'),
                                   onPressed: () {
                                     Navigator.of(context).push(
                                         MaterialPageRoute(
                                             builder: (context) => CartPage()));
                                   }),
-                              Text(
+                              const Text(
                                 'Пиво уже в корзине',
                                 style: TextStyle(
                                   fontSize: 12.0,
@@ -97,7 +97,7 @@ class ItemPage extends StatelessWidget {
                           )
                         : MaterialButton(
                             color: Theme.of(context).primaryColor,
-                            child: Text('Добавить пиво в корзину'),
+                            child: const Text('Добавить пиво в корзину'),
                             onPressed: () {
                               Provider.of<CartDataProvider>(context,
                                       listen: false)

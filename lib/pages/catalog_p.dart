@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class BeerCatalog extends StatelessWidget {
   final String imgURL;
 
-  BeerCatalog({Key key, this.imgURL}) : super(key: key);
+  const BeerCatalog({Key key, this.imgURL}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
